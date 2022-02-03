@@ -1,4 +1,4 @@
-# EDI_Pr-cticas_FJ
+# EDI_Pr-cticas
 Estructura de Datos I - Prácticas
 
 ## Integrantes
