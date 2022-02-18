@@ -1,0 +1,38 @@
+﻿@model List<ErrorViewModel>
+@{
+    ViewData["Title"] = "Equipos CSV";
+}
+
+<h2>@ViewData["Title"]</h2>
+@using (Html.BeginForm("CargarArch", "Home", FormMethod.Post, new { enctype = "multipart/ form-data" })) ;
+<label for="file">Cargar</label>
+<input type="file" name="fale" id="file" />
+<input type="submit" value="Mandar" />
+
+
+@if (Model != null)
+{
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <td>Equipo</td>
+                <td>Coach</td>
+                <td>Liga</td>
+                <td>Fecha</td>
+                <td>Request</td>
+
+
+            </tr>
+        </thead>
+        @foreach (var equipo in Model)
+        {
+            <tr>
+                <td>@equipo.Equipo</td>
+                <td>@equipo.Coach</td>
+                <td>@equipo.Liga</td>
+                <td>@equipo.Fecha</td>
+                <td>@equipo.RequestId</td>
+            </tr>
+        }   
+    </table>
+}
