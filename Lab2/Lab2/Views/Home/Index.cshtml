@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Lab2.Models.Modelo>
+
+@{
+    ViewData["Title"] = "Equipos";
+     ViewBag.Title = "Index";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+
+
+<p>Lista</p>
+<p>
+@Html.ActionLink("Create New", "Create")
+</p>
+@using (Html.BeginForm())
+{
+    <p>
+        Buscar por nombre: @Html.TextBox("nombre")
+        <input type="submit" value="Buscar" />
+    </p>
+}
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <td>Equipo</td>
+            <td>Coach</td>
+            <td>Liga</td>
+            <td>Fecha</td>
+            <td>Request</td>
+
+
+        </tr>
+    </thead>
+    @foreach(var equipo in Model)
+            {
+<tr>
+      <td>@Html.DisplayFor(modelItem => equipo.Equipo)</td>
+                <td>@Html.DisplayFor(modelItem => equipo.Coach)</td>
+                <td>@Html.DisplayFor(modelItem => equipo.Liga)</td>
+                <td>@Html.DisplayFor(modelItem => equipo.Fecha)</td>
+                <td>@Html.DisplayFor(modelItem => equipo.RequestId)</td>
+                <td>
+            @Html.ActionLink("Edit", "Edit", new { id=equipo.Equipo }) |
+            @Html.ActionLink("Details", "Details", new { id=equipo.Coach }) |
+            @Html.ActionLink("Delete", "Delete", new { id=equipo.Liga })
+              
+        </td>
+</tr>
+            }
+</table>
