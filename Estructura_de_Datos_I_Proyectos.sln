@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EDI_P0", "EDI_P0\EDI_P0.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EDI_P1", "EDI_P1\EDI_P1.csproj", "{3C23808E-B05D-4319-9E06-E6B03A499B7B}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EDI_P2", "EDI_P2\EDI_P2.csproj", "{81E675C2-42A2-4599-BCFE-5BCD661183CD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{3C23808E-B05D-4319-9E06-E6B03A499B7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C23808E-B05D-4319-9E06-E6B03A499B7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C23808E-B05D-4319-9E06-E6B03A499B7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81E675C2-42A2-4599-BCFE-5BCD661183CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81E675C2-42A2-4599-BCFE-5BCD661183CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81E675C2-42A2-4599-BCFE-5BCD661183CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81E675C2-42A2-4599-BCFE-5BCD661183CD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
