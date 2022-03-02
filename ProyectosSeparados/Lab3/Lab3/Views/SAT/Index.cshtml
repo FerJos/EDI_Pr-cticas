@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Lab3.Models.LosNodos>
+
+@{
+    ViewData["Title"] = "Index";
+     
+}
+
+<h2>@ViewData["Title"]</h2>
+
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <td>ID</td>
+            <td>email</td>
+            <td>propietario</td>
+            <td>color</td>
+            <td>marca</td>
+            <td>serie</td>
+
+        </tr>
+    </thead>
+    @foreach(var nodo in Model)
+            {
+<tr>
+      <td>@Html.DisplayFor(modelItem => nodo.ID)</td>
+                <td>@Html.DisplayFor(modelItem => nodo.email)</td>
+                <td>@Html.DisplayFor(modelItem => nodo.propietario)</td>
+                <td>@Html.DisplayFor(modelItem => nodo.color)</td>
+                <td>@Html.DisplayFor(modelItem => nodo.marca)</td>
+                 <td>@Html.DisplayFor(modelItem => nodo.serie)</td>
+               
+</tr>
+            }
+</table>
