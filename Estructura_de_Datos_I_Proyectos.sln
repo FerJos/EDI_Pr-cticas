@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EDI_P2", "EDI_P2\EDI_P2.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EDI_Lab3", "EDI_Lab3\EDI_Lab3.csproj", "{086B948C-9E2C-4E57-9576-88E8880F073E}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EDI_Lab3_1", "EDI_Lab3_1\EDI_Lab3_1.csproj", "{478C3CF0-FB27-4415-A0A1-77EE7422537B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{086B948C-9E2C-4E57-9576-88E8880F073E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{086B948C-9E2C-4E57-9576-88E8880F073E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{086B948C-9E2C-4E57-9576-88E8880F073E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{478C3CF0-FB27-4415-A0A1-77EE7422537B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{478C3CF0-FB27-4415-A0A1-77EE7422537B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{478C3CF0-FB27-4415-A0A1-77EE7422537B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{478C3CF0-FB27-4415-A0A1-77EE7422537B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
