@@ -6,9 +6,9 @@
         string Nombre { get; set; }
         string Apellido { get; set; }
         string FechaDeNacimiento { get; set; }
+        bool EstaSiendoAtendido { get; set; }
 
         //Datod de priorizacion
-        int Prioridad { get; set; }
         string Sexo { get; set; }
         //Masculino: +3
         //Femenino: +5
@@ -40,6 +40,7 @@
             this.Edad = e;
             this.Espec = sp;
             this.Ingreso = i;
+            this.EstaSiendoAtendido = false;
         }
 
         int CalcularPrioridad(string sexo, int edad, string spec, string ingreso)
