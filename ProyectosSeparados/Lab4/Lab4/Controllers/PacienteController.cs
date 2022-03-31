@@ -8,7 +8,7 @@ namespace Lab4.Controllers
     [Route("[controlador]")]
     public class PacienteController : Controller
     {
-        public static Prioridades<Paciente> LaCola;
+        public static Prioridadess<Paciente> LaCola;
 
         private List<Paciente> Pac = new List<Paciente>()
         {
@@ -20,10 +20,10 @@ namespace Lab4.Controllers
 
         public PacienteController()
         {
-            LaCola = new Prioridades<Paciente>(25);
+            LaCola = new Prioridadess<Paciente>(25);
         }
         
-        public Prioridades<Paciente> Index()
+        public Prioridadess<Paciente> Index()
         {
             int inicilzador = 0;
             foreach(var PAct in Pac)
