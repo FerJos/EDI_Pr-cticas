@@ -3,45 +3,33 @@
     public class Paciente
     {
         //Datos de paciente
-        string Nombre { get; set; }
-        string Apellido { get; set; }
-        string FechaDeNacimiento { get; set; }
-        bool EstaSiendoAtendido { get; set; }
+        public string Nombre { get; set; }
+        public string Apellido { get; set; }
+        public DateTime FechaDeNacimiento { get; set; }
+        public bool EstaSiendoAtendido { get; set; }
 
         //Datod de priorizacion
-        string Sexo { get; set; }
+        public string Sexo { get; set; }
         //Masculino: +3
         //Femenino: +5
 
-        int Edad { get; set; }
+        public int Edad { get; set; }
         //70+: +10
         //50-69: +8
         //18-49: +3
         //0-5: +8
         //6-17: +5
 
-        string Espec { get; set; }
+        public string Espec { get; set; }
         //Traumatología(interna): +3
         //Traumatología(expuesta): +8
         //Ginecología: +5
         //Cardiología: +10
         //Neumología: +8
 
-        string Ingreso { get; set; }
+        public string MetodoIngreso { get; set; }
         //Ambulancia: +5
         //Asistido: +3
-
-        public Paciente(string n, string a, string fdn, string s,  int e, string sp, string i)
-        {
-            this.Nombre = n;
-            this.Apellido = a;
-            this.FechaDeNacimiento = fdn;
-            this.Sexo = s;
-            this.Edad = e;
-            this.Espec = sp;
-            this.Ingreso = i;
-            this.EstaSiendoAtendido = false;
-        }
 
         int CalcularPrioridad(string sexo, int edad, string spec, string ingreso)
         {
