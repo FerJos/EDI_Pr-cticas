@@ -2,11 +2,11 @@
 {
     public class Nodo<T>
     {
-        T MinValue;
-        T MaxValue;
-        Nodo<T> subIzq;
-        Nodo<T> subMid;
-        Nodo<T> subDer;
+        public T MinValue;
+        public T MaxValue;
+        public Nodo<T> subIzq;
+        public Nodo<T> subMid;
+        public Nodo<T> subDer;
         public Nodo(T value)
         {
             MinValue = value;
