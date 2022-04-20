@@ -1,47 +1,5 @@
-<<<<<<< HEAD
-﻿using Lab4.Models;
-using LaCola;
-using Microsoft.AspNetCore.Mvc;
 
 
-namespace Lab4.Controllers
-{
-    [Route("[controlador]")]
-    public class PacienteController : Controller
-    {
-        public static Prioridadess<Paciente> LaCola;
-
-        private List<Paciente> Pac = new List<Paciente>()
-        {
-            new Paciente(){Nombre = "Raul", Apellido = "Porres", FechaDeNacimiento = "12/04/2002", EstaSiendoAtendido=false, Sexo="Macho", Edad =18, Espec="Neumologia", Ingreso="Camilla"},
-            new Paciente(){Nombre = "Sandra", Apellido = "Porres", FechaDeNacimiento = "12/04/2002", EstaSiendoAtendido=false, Sexo="Macho", Edad =30, Espec="Anato", Ingreso="Camilla"},
-            new Paciente(){Nombre = "Paul", Apellido = "Porres", FechaDeNacimiento = "12/04/2002", EstaSiendoAtendido=false, Sexo="Macho", Edad =10, Espec="Link", Ingreso="Camilla"}
-
-        };
-
-        public PacienteController()
-        {
-            LaCola = new Prioridadess<Paciente>(25);
-        }
-        
-        public Prioridadess<Paciente> Index()
-        {
-            int inicilzador = 0;
-            foreach(var PAct in Pac)
-            {
-                if(PAct.Edad >= 18  && PAct.Edad <= 49)
-                {
-                    inicilzador = inicilzador + 3;
-                }
-                if (PAct.Edad >= 6 && PAct.Edad <= 17)
-                {
-                    inicilzador = inicilzador + 5;
-                }
-                LaCola.Encolar(PAct, inicilzador);
-            }
-            
-            return LaCola;
-=======
 ﻿using Microsoft.AspNetCore.Mvc;
 using Lab4.Models;
 
@@ -50,21 +8,22 @@ namespace Lab4.Controllers
     [Route("[controller]")]
     public class PacienteController : Controller
     {
-        public static ColaDePrioridad<Paciente> ColaPrio;
-        public PacienteController()
-        {
-            ColaPrio = new ColaDePrioridad<Paciente>(10);
-        }
+        public static ColaDePrioridad<Paciente> ColaPrio = new ColaDePrioridad<Paciente>(25);
+        //public PacienteController()
+        //{
+        //    ColaPrio = new ColaDePrioridad<Paciente>(25);
+        //}
         //TEST
         private List<Paciente> TESTColaPrio = new List<Paciente>() 
         { 
-            new Paciente(){Nombre = "Raul", Apellido="Porres", Edad=18, Espec="Neumologia"},
-            new Paciente(){Nombre = "Maria", Apellido="Gonzales", Edad=15, Espec="Cardiologia"}
-        };
+            new Paciente(){Nombre = "Saul", Apellido="Porras", Edad=18, Sexo="Masculino",Espec="Neumologia", MetodoIngreso="Ambulancia"},
+            new Paciente(){Nombre = "Carla", Apellido="Garcia", Edad=15, Sexo="Femenino", Espec="Cardiologia",  MetodoIngreso="Ambulancia"},
+            new Paciente(){Nombre = "Carlitos", Apellido="Gonzele", Edad=50, Sexo="Femenino", Espec="Ginecologia",  MetodoIngreso="Asistido"}
+        };  
         public ColaDePrioridad<Paciente> Index()
         {
-            
-            foreach(var PacienteActual in TESTColaPrio)
+
+            foreach (var PacienteActual in TESTColaPrio)
             {
                 int prioridad = 0;
                 //Edad
@@ -98,23 +57,23 @@ namespace Lab4.Controllers
                     prioridad = prioridad + 5;
                 }
                 //Especializacion
-                if (PacienteActual.Espec == "Traumatología(interna)")
+                if (PacienteActual.Espec == "Traumatologia(interna)")
                 {
                     prioridad = prioridad + 3;
                 }
-                if (PacienteActual.Espec == "Traumatología(expuesta)")
+                if (PacienteActual.Espec == "Traumatologia(expuesta)")
                 {
                     prioridad = prioridad + 8;
                 }
-                if (PacienteActual.Espec == "Ginecología")
+                if (PacienteActual.Espec == "Ginecologia")
                 {
                     prioridad = prioridad + 5;
                 }
-                if (PacienteActual.Espec == "Cardiología")
+                if (PacienteActual.Espec == "Cardiologia")
                 {
                     prioridad = prioridad + 10;
                 }
-                if (PacienteActual.Espec == "Neumología")
+                if (PacienteActual.Espec == "Neumologia")
                 {
                     prioridad = prioridad + 8;
                 }
@@ -130,7 +89,6 @@ namespace Lab4.Controllers
                 ColaPrio.Enqueue(PacienteActual, prioridad);
             }
             return ColaPrio;
->>>>>>> origin
         }
     }
 }

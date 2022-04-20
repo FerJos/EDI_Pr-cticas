@@ -6,8 +6,4 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\LaCola2\LaCola2.csproj" />
-  </ItemGroup>
-
 </Project>
