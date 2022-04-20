@@ -1,0 +1,25 @@
+﻿@model List<DataCarsModel>
+@{
+    ViewData["Title"] = "Personas";
+}
+<h2>@ViewData["Title"]</h2>
+<p>Lista de personas cargadas en memoria: </p>
+
+<table class = "table table-hover">
+    <thead>
+        <tr>
+            <td>ID</td>
+            <td>Nombre</td>
+        </tr>
+    </thead>
+@foreach(var persona in Model)
+    {
+        <tr>
+            <td>@persona.Placa</td>
+            <td>@persona.Color</td>
+            <td>@persona.Propietario</td>
+            <td>@persona.CoordenadasLat</td>
+            <td>@persona.CoordenadasLong</td>
+        </tr>
+    }
+</table>

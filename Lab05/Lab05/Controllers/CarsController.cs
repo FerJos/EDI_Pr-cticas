@@ -2,6 +2,7 @@
 using Lab05.Models;
 namespace Lab05.Controllers
 {
+    [Route("Controller")]
     public class CarsController : Controller
     {
         List<DataCarsModel> equipo = new List<DataCarsModel>();
@@ -73,9 +74,6 @@ namespace Lab05.Controllers
 
             return View(equipo);
         }
-        public IActionResult Index()
-        {
-            return View();
-        }
+       
     }
 }
