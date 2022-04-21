@@ -58,7 +58,7 @@ namespace Lab05.Models
                     raiz = nuevaRaiz;
                 }                
             }
-        }
+        }        
         
     }
 }
