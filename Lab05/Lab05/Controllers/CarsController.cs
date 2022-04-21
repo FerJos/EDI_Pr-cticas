@@ -12,11 +12,11 @@ namespace Lab05.Controllers
 
             List<DataCarsModel> personas = new List<DataCarsModel>()
             {
-                new DataCarsModel {Placa = "Barsa", Color = "Guar", Propietario = "Espanola", CoordenadasLat = 1, CoordenadasLong = 6},
-                 new DataCarsModel {Placa = "Real", Color = "Zizu", Propietario = "Inglesa", CoordenadasLat = 2, CoordenadasLong = 7},
-                   new DataCarsModel {Placa = "Chelsea", Color = "Tuch", Propietario = "Holandesa", CoordenadasLat = 3, CoordenadasLong = 8},
-                     new DataCarsModel {Placa = "MANU", Color = "Rag", Propietario = "Francesa", CoordenadasLat = 4, CoordenadasLong = 9},
-                       new DataCarsModel {Placa = "MANC", Color = "PEll", Propietario = "Alemana", CoordenadasLat = 5, CoordenadasLong = 10}
+                new DataCarsModel {Placa = 123456, Color = "Guar", Propietario = "Espanola", CoordenadasLat = 1, CoordenadasLong = 6},
+                 new DataCarsModel {Placa = 789012, Color = "Zizu", Propietario = "Inglesa", CoordenadasLat = 2, CoordenadasLong = 7},
+                   new DataCarsModel {Placa = 345678, Color = "Tuch", Propietario = "Holandesa", CoordenadasLat = 3, CoordenadasLong = 8},
+                     new DataCarsModel {Placa = 901234, Color = "Rag", Propietario = "Francesa", CoordenadasLat = 4, CoordenadasLong = 9},
+                       new DataCarsModel {Placa = 567890, Color = "PEll", Propietario = "Alemana", CoordenadasLat = 5, CoordenadasLong = 10}
             };
 
 
@@ -56,7 +56,7 @@ namespace Lab05.Controllers
                             string[] data = Actual.Split(',');
                             equipo.Add(new DataCarsModel()
                             {
-                                Placa = data[0],
+                                Placa = Convert.ToInt32(data[0]),
                                 Color = data[1],
                                 Propietario = data[2],
                                 CoordenadasLat = Convert.ToDouble(data[3]),
