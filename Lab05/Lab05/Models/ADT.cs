@@ -55,9 +55,66 @@
             Root = null;
         }
 
-        bool Buscar()
+        Node BuscarNodo(int placa, Node raiz)
         {
-            return true;
+            for (int i = 0; i < 2; i++)
+            {
+                if (raiz.NodeValues[i].Placa == placa)
+                {
+                    return raiz;
+                }
+            }
+            if (placa < raiz.NodeValues[0].Placa)
+            {
+                return BuscarNodo(placa, raiz.ChildNodes[0]);
+            }
+            if (raiz.NodeValues.Count == 1 && raiz.NodeValues[0].Placa < placa)
+            {
+                return BuscarNodo(placa, raiz.ChildNodes[2]);
+            }
+            if (raiz.NodeValues.Count == 2)
+            {
+                if (raiz.NodeValues[0].Placa < placa && placa < raiz.NodeValues[1].Placa)
+                {
+                    return BuscarNodo(placa, raiz.ChildNodes[1]);
+                }
+                else
+                {
+                    return BuscarNodo(placa, raiz.ChildNodes[2]);
+                }
+            }
+            else return null;
+        }
+         DataCarsModel Buscar(int placa, Node raiz)
+        {
+            for(int i = 0; i < 2; i++)
+            {
+                if (raiz.NodeValues[i].Placa == placa)
+                {
+                    return raiz.NodeValues[i];
+                }                
+            }
+            if(placa < raiz.NodeValues[0].Placa)
+            {
+                return Buscar(placa, raiz.ChildNodes[0]);
+            }
+            if(raiz.NodeValues.Count == 1 && raiz.NodeValues[0].Placa < placa)
+            {
+                return Buscar(placa, raiz.ChildNodes[2]);
+            }
+            if(raiz.NodeValues.Count == 2)
+            {
+                if(raiz.NodeValues[0].Placa < placa && placa < raiz.NodeValues[1].Placa)
+                {
+                    return Buscar(placa, raiz.ChildNodes[1]);
+                }
+                else
+                {
+                    return Buscar(placa, raiz.ChildNodes[2]);
+                }
+            }
+            else return null;
+
         }
         public Node Insertar(DataCarsModel newValue, Node raiz)
         {
@@ -113,9 +170,12 @@
             
             return raiz;
         }
-        bool Remover()
+        bool Remover(int placa, Node raiz)
         {
-            return true;
-        }
+            
+
+
+        }       
+        
     }
 }
