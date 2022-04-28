@@ -2,29 +2,73 @@
 using Lab05.Models;
 namespace Lab05.Controllers
 {
-    [Route("Controller")]
+   
     public class CarsController : Controller
+
+
     {
+
+        ADT arboles = new ADT();
+        
         List<DataCarsModel> equipo = new List<DataCarsModel>();
-        public IActionResult Index(string BusEqu, string searchString)
+        public List<DataCarsModel> DatosCarros()
         {
+
+            return new List<DataCarsModel>
             
 
-            List<DataCarsModel> personas = new List<DataCarsModel>()
+               
+
             {
-                new DataCarsModel {Placa = 123456, Color = "Guar", Propietario = "Espanola", CoordenadasLat = 1, CoordenadasLong = 6},
-                 new DataCarsModel {Placa = 789012, Color = "Zizu", Propietario = "Inglesa", CoordenadasLat = 2, CoordenadasLong = 7},
-                   new DataCarsModel {Placa = 345678, Color = "Tuch", Propietario = "Holandesa", CoordenadasLat = 3, CoordenadasLong = 8},
-                     new DataCarsModel {Placa = 901234, Color = "Rag", Propietario = "Francesa", CoordenadasLat = 4, CoordenadasLong = 9},
-                       new DataCarsModel {Placa = 567890, Color = "PEll", Propietario = "Alemana", CoordenadasLat = 5, CoordenadasLong = 10}
+                
+                new DataCarsModel { Placa = 123456, Color = "Azul", Propietario = "Luis", CoordenadasLat = 1, CoordenadasLong = 6 },
+                 new DataCarsModel { Placa = 789012, Color = "Rojo", Propietario = "Fnachesco", CoordenadasLat = 2, CoordenadasLong = 7 },
+                   new DataCarsModel { Placa = 345678, Color = "Tuch", Propietario = "Sammer", CoordenadasLat = 3, CoordenadasLong = 8 },
+                     new DataCarsModel { Placa = 901234, Color = "Rag", Propietario = "Alejandro", CoordenadasLat = 4, CoordenadasLong = 9 },
+                       new DataCarsModel { Placa = 567890, Color = "PEll", Propietario = "Alemana", CoordenadasLat = 5, CoordenadasLong = 10 }
+                       
+                       
+
             };
+        
 
-
-
-
-            return View(personas);
         }
 
+
+        
+        
+
+        [Route("Controller")]
+        
+        public IActionResult Index2()
+        {
+            var carros = from a in DatosCarros()
+                           orderby a.Placa
+                           select a;
+            foreach (var carro in DatosCarros())
+            {
+                arboles.Insertar(carro, arboles.Root);
+            }
+            arboles.Buscar(567890, arboles.Root);
+            arboles.Remover(789012, arboles.Root);
+
+            return View(carros);
+
+
+        }
+
+        //[Route("Controller2")]
+        //public IActionResult Index()
+        //{
+        //    var carros = from a in DatosCarros()
+        //                 orderby a.Placa
+        //                 select a;
+
+
+        //    return View(carros);
+
+
+        //}
 
 
 
@@ -59,6 +103,7 @@ namespace Lab05.Controllers
                                 Placa = Convert.ToInt32(data[0]),
                                 Color = data[1],
                                 Propietario = data[2],
+                              
                                 CoordenadasLat = Convert.ToDouble(data[3]),
                                 CoordenadasLong = Convert.ToDouble(data[4])
                             });

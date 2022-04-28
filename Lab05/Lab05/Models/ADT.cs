@@ -11,12 +11,23 @@
             public Node(DataCarsModel newValue)
             {
                 ParentNode = null;
+                NodeValues = new List<DataCarsModel>();
+                ChildNodes = new List<Node>();
                 NodeValues.Add(newValue);
             }
             public Node(DataCarsModel newValue, Node parent)
             {
                 ParentNode = parent;
+                NodeValues = new List<DataCarsModel>();
+                ChildNodes = new List<Node>();
                 NodeValues.Add(newValue);
+            }
+            public Node()
+            {
+                ParentNode = null;
+                NodeValues = new List<DataCarsModel>();
+                ChildNodes = new List<Node>();
+               
             }
 
             public void Sort()
@@ -49,7 +60,7 @@
         }
 
 
-        Node Root;
+       public Node Root;
         public ADT()
         {
             Root = null;
@@ -85,9 +96,9 @@
             }
             else return null;
         }
-         DataCarsModel Buscar(int placa, Node raiz)
+         public DataCarsModel Buscar(int placa, Node raiz)
         {
-            for(int i = 0; i < 2; i++)
+            for(int i = 0; i < raiz.NodeValues.Count-1; i++)
             {
                 if (raiz.NodeValues[i].Placa == placa)
                 {
@@ -116,12 +127,24 @@
             else return null;
 
         }
+        public Node Insertar2(DataCarsModel newValue, DataCarsModel newValues2, Node raiz) {
+            for (int i = 0; i < 3; i++)
+            {
+                raiz.ChildNodes.Add(new Node());
+
+}
+            raiz.ChildNodes[0].Insert(newValue);
+            raiz.ChildNodes[2].Insert(newValues2);
+            return raiz;
+        }
+            
         public Node Insertar(DataCarsModel newValue, Node raiz)
         {
             //es nulo
             if(raiz == null)
             {
                 raiz = new Node(newValue);
+                Root = raiz;
                 return raiz;
             }
             // es nodo
@@ -153,6 +176,7 @@
                 if (raiz.NodeValues.Count == 1)
                 {
                     raiz.Insert(newValue);
+                    Root = raiz;
                     return raiz;
                 }
                 if (raiz.NodeValues.Count == 2)
@@ -161,20 +185,80 @@
                     raiz = null;
                     temp.Insert(newValue);
                     var nuevaRaiz = temp.ParentNode;
-                    nuevaRaiz.Insert(temp.NodeValues[1]);
-                    Insertar(temp.NodeValues[0], nuevaRaiz);
-                    Insertar(temp.NodeValues[2], nuevaRaiz);                    
+                    if(nuevaRaiz == null)
+                    {
+                        nuevaRaiz = new Node(temp.NodeValues[1]);
+                    }
+
+                    Insertar2(temp.NodeValues[0], temp.NodeValues[2], nuevaRaiz);
+                    Root = nuevaRaiz;
                     return nuevaRaiz;
                 }
             }
             
             return raiz;
         }
-        bool Remover(int placa, Node raiz)
+        //Para el valor mas a la izquierda 
+        //Node masderecha(Node raiz, int placa)
+        //{
+        //    for (int i = 0; i < 2; i++)
+        //    {
+        //        if (raiz == null)
+        //        {
+        //            return null;
+        //        }
+        //       if ( raiz.NodeValues[1].Placa == placa)
+        //        {
+        //            return masderecha(raiz.ChildNodes[1], placa);
+        //        }
+        //        else if (raiz.NodeValues[0].Placa == placa)
+        //        {
+        //            return masderecha(raiz.ChildNodes[1], placa);
+        //        }
+        //    }
+        //    return raiz;
+        //}
+        //Eliminar
+        public Node Remover(int placa, Node raiz)
         {
-            
+            //No hay elementos
+            if (raiz == null)
+            {
+                return null ;
+            }
+            for (int i = 0; i < 1; i++)
+            {
+                if (raiz.NodeValues[0].Placa == placa) //Si eliminamos padre izquierdo  
+                {
 
+                    raiz.NodeValues.Remove(raiz.NodeValues[0]);
+                }
+                else if (raiz.NodeValues[1].Placa == placa) //Si elminamos padre derecho
+                {
+                    raiz.NodeValues.Remove(raiz.NodeValues[1]);
+                }
+            }
 
+                //Si tiene dos valores el padre
+             
+           
+            //if (raiz.ChildNodes[0] != null && raiz.ChildNodes[1] == null) //Si elminamos hijo izquierdo
+            //{
+            //    menor = masderecha(raiz.ChildNodes[1], placa);
+            //    raiz = menor;
+            //    return (menor);
+            //}
+            //else if (raiz.ChildNodes[0] == null && raiz.ChildNodes[1] != null) //Si elminamos hijo derecho
+            //{
+            //    menor = masderecha(raiz.ChildNodes[1], placa);
+            //    raiz = menor;
+            //    return (menor);
+            //}
+            //else
+            {
+                return raiz;
+            }
+           
         }       
         
     }

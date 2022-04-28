@@ -7,5 +7,8 @@
         public string Propietario { get; set; }
         public double CoordenadasLong { get; set; }
         public double CoordenadasLat { get; set; }
+        
     }
+    
+    
 }
