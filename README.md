@@ -10,6 +10,6 @@ Curso: Estructura de datos I
 
 ## Integrantes
 
-* Fernando J Alegría - 1092920  |  @FerJos
+* ~~Fernando J Alegría - 1092920  |  @FerJos~~
 * Esteban Ruiz - 1092921    |    @EstebanRuiz01
 * Luis Girón - 1188021  |  @wich011
